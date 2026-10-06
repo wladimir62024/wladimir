@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home — Wladimir Field System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="navbar"></aside>
+<div class="main-content">
+
+<div class="page-wrap">
+    <div class="hero">
+        <h1 id="welcomeMsg">Welcome! 👨‍🎓</h1>
+        <p>Manage your field application, accommodation, and payments — all in one place.</p>
+        <div class="hero-actions">
+            <a href="application.html" class="btn">📄 Apply for Field</a>
+            <a href="status.html" class="btn btn-outline">📋 Check Status</a>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="feature-card">
+            <span class="tag">Organizations</span>
+            <h3>🏢 Organizations</h3>
+            <p>Explore organizations currently offering field placements.</p>
+            <a href="organizations.html" class="btn btn-sm">Open</a>
+        </div>
+        <div class="feature-card">
+            <span class="tag">Hotels</span>
+            <h3>🏠🛌 Hotels</h3>
+            <p>Find a place to stay near your field placement location.</p>
+            <a href="accommodation.html" class="btn btn-sm">Open</a>
+        </div>
+        <div class="feature-card">
+            <span class="tag">Payment</span>
+            <h3>💳💸 Payment</h3>
+            <p>Pay the program fee and view your payment history.</p>
+            <a href="payment.html" class="btn btn-sm">Open</a>
+        </div>
+        <div class="feature-card">
+            <span class="tag">Profile</span>
+            <h3>👤 Profile</h3>
+            <p>Update your name, phone number, password, or profile picture.</p>
+            <a href="profile.html" class="btn btn-sm">Open</a>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">© 2026 Wladimir Field Application Management System</footer>
+
+</div>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+    const user = requireStudent();
+    renderNavbar('home');
+    if (user) document.getElementById('welcomeMsg').textContent = `Welcome, ${user.name}! 👨‍🎓`;
+</script>
+</body>
+</html>

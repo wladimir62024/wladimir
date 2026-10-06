@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment — Wladimir Field System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="navbar"></aside>
+<div class="main-content">
+
+<div class="page-wrap">
+    <h2 class="section-title">💳💸 Payment</h2>
+    <p class="section-sub">Pay the field/internship program fee and track your payment history.</p>
+
+    <div class="card" style="max-width:520px;">
+        <h3>Make a Payment</h3>
+        <form id="paymentForm">
+            <label for="application_id">Related Application (optional)</label>
+            <select id="application_id">
+                <option value="">Not related to a specific application</option>
+            </select>
+
+            <label for="amount">Amount (TZS/KSH/UD)</label>
+            <input type="number" id="amount" min="1" required>
+
+            <label for="method">Payment Method</label>
+            <select id="method" required>
+                <option value="Mpesa">M-Pesa</option>
+                <option value="Bank Transfer">Halo pesa</option>
+                <option value="Tigo Pesa">Tigo Pesa</option>
+                <option value="Airtel Money">Airtel Money</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="Bank Transfer">Wlad-Bank</option>
+                <option value="Cash">Cash</option>
+            </select>
+
+            <label for="reference_code">Transaction Reference Code</label>
+            <input type="text" id="reference_code" required>
+
+            <button type="submit" class="btn btn-block">Submit Payment</button>
+            <p class="form-msg" id="formMsg"></p>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Payment History</h3>
+        <div id="paymentHistory"></div>
+    </div>
+</div>
+
+<footer class="site-footer">© 2026 Student Field Application Management System</footer>
+
+</div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/payment.js"></script>
+<script>renderNavbar('payment');</script>
+</body>
+</html>

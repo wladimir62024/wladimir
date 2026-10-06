@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organizations — Wladimir Field System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="navbar"></aside>
+<div class="main-content">
+
+<div class="page-wrap">
+    <h2 class="section-title">🏢 Organizations</h2>
+    <p class="section-sub">Organizations offering field/internship placements for students.</p>
+
+    <div id="adminOrgBox"></div>
+
+    <div class="grid" id="orgGrid"></div>
+</div>
+
+<footer class="site-footer">© 2026 Wladimir Application Management System</footer>
+
+</div>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+    renderNavbar('organizations');
+    const u = getUser();
+    if (u && u.role === 'admin') {
+        document.getElementById('adminOrgBox').innerHTML = `
+            <div class="card">
+                <h3>➕ Add New Organization</h3>
+                <form id="addOrgForm">
+                    <label>Organization Name</label>
+                    <input type="text" id="org_name" required>
+                    <label>Location</label>
+                    <input type="text" id="org_location" required>
+                    <label>Sector</label>
+                    <input type="text" id="org_sector" placeholder="e.g. Finance, Energy">
+                    <label>Description</label>
+                    <textarea id="org_description"></textarea>
+                    <label>Contact Email</label>
+                    <input type="email" id="org_email">
+                    <label>Contact Phone</label>
+                    <input type="text" id="org_phone">
+                    <label>Slots Available</label>
+                    <input type="number" id="org_slots" min="0" value="0">
+                    <button type="submit" class="btn btn-block">Save Organization</button>
+                    <p class="form-msg" id="orgFormMsg"></p>
+                </form>
+            </div>
+        `;
+    }
+</script>
+<script src="js/organizations.js"></script>
+</body>
+</html>

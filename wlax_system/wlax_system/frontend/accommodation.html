@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotels — Wladimir Field System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="navbar"></aside>
+<div class="main-content">
+
+<div class="page-wrap">
+    <h2 class="section-title">🏠🛌 Hotels</h2>
+    <p class="section-sub">Browse hotels/lodges and their individual rooms. Each room shows whether it's Available or already Booked by someone — you can only book a room that is still available, and many students can each book a different room at the same hotel/lodge.</p>
+
+    <div id="adminAccBox"></div>
+
+    <div class="grid" id="accGrid"></div>
+</div>
+
+<footer class="site-footer">© 2026 Wladimir Field Application Management System</footer>
+
+</div>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+    renderNavbar('accommodation');
+    const u = getUser();
+    if (u && u.role === 'admin') {
+        document.getElementById('adminAccBox').innerHTML = `
+            <div class="card">
+                <h3>➕ Add New Accommodation (Hotel / Lodge)</h3>
+                <form id="addAccForm">
+                    <label>Accommodation Name</label>
+                    <input type="text" id="acc_name" required>
+                    <label>Location</label>
+                    <input type="text" id="acc_location" required>
+                    <label>Default Price per Room / Month (TZS)</label>
+                    <input type="number" id="acc_price" min="0" required>
+                    <label>Default Room Capacity (people)</label>
+                    <input type="number" id="acc_capacity" min="1" value="1">
+                    <label>Description</label>
+                    <textarea id="acc_description"></textarea>
+                    <label>Contact Phone</label>
+                    <input type="text" id="acc_phone">
+                    <label>Number of Rooms to Create Now (optional — you can add more later)</label>
+                    <input type="number" id="acc_initial_rooms" min="0" value="0">
+                    <button type="submit" class="btn btn-block">Save Accommodation</button>
+                    <p class="form-msg" id="accFormMsg"></p>
+                </form>
+            </div>
+        `;
+    }
+</script>
+<script src="js/accommodation.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel —  Wladimir System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="navbar"></aside>
+<div class="main-content">
+
+<div class="page-wrap">
+    <h2 class="section-title">🛠️ Admin Panel</h2>
+    <p class="section-sub">View all student applications, approve or reject them, and leave a message.</p>
+
+    <div id="adminList"></div>
+
+    <h2 class="section-title" style="margin-top:2.5rem;">💳 Payment Verification</h2>
+    <p class="section-sub">Only an admin can confirm or reject a student's payment.</p>
+
+    <div id="adminPaymentsList"></div>
+</div>
+
+<footer class="site-footer">© 2026 Wladimir Field Application Management System</footer>
+
+</div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/admin.js"></script>
+<script>renderNavbar('admin');</script>
+</body>
+</html>

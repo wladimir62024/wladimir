@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply for Field — Student Field System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="navbar"></aside>
+<div class="main-content">
+
+<div class="form-box" style="max-width:560px;">
+    <h2>📄 Apply for Field / Internship</h2>
+    <form id="applicationForm">
+        <label for="organization_id">Select Organization (optional)</label>
+        <select id="organization_id">
+            <option value=""> Choose from the list or fill in below manually </option>
+        </select>
+
+        <label for="company">Company/Organization Name</label>
+        <input type="text" id="company" required>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" required>
+
+        <label for="course">Course/Department</label>
+        <input type="text" id="course" required>
+
+        <label for="start_date">Start Date</label>
+        <input type="date" id="start_date" required>
+
+        <label for="end_date">End Date</label>
+        <input type="date" id="end_date" required>
+
+        <label for="room_id">Accommodation Room (optional — you must book a room on the Accommodation page first)</label>
+        <select id="room_id">
+            <option value="">I don't need accommodation </option>
+        </select>
+
+        <button type="submit" class="btn btn-block">Submit Application</button>
+        <p class="form-msg" id="formMsg"></p>
+    </form>
+</div>
+
+</div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/application.js"></script>
+<script>renderNavbar('home');</script>
+</body>
+</html>
